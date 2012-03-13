@@ -1,5 +1,6 @@
 #!/bin/bash
 #Lists all chrooted processes. First parameter is chroot directory. Script might need to run as root.
+#Techniques originally released by other authors at http://forums.grsecurity.net/viewtopic.php?f=3&t=1632 .
 
 . ubiquitous_bash.sh
 

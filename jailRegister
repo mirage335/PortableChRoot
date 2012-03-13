@@ -1,0 +1,13 @@
+#!/bin/bash
+#Lists all chrooted processes. First parameter is chroot directory. Script might need to run as root.
+
+. ubiquitous_bash.sh
+
+CHROOT=$(getAbsoluteLocation "$1")
+PROCS=""
+for p in `ps -o pid -A`; do
+	if [ "`readlink /proc/$p/root`" = "$CHROOT" ]; then
+		PROCS="$PROCS $p"
+	fi
+done
+echo "$PROCS"
